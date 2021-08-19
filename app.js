@@ -29,8 +29,24 @@ function updateProductNumber(isAdd, product, price) {
     //update product price
     const productTotal = document.getElementById(product + '-total');
     productTotal.innerText = inputFieldValue * price;
+    calculateTotal();
 }
 
+function getInputValue(product) {
+    const productInput = document.getElementById(product + '-input-field');
+    const productInputValue = parseInt(productInput.value);
+    return productInputValue;
+}
+
+//This is calculate total
+
+function calculateTotal() {
+    const phoneTotal = getInputValue('phone') * 1219;
+    const caseTotal = getInputValue('case') * 59;
+    const subTotal = phoneTotal + caseTotal;
+    console.log(subTotal);
+
+}
 //This is phone section
 document.getElementById('phone-plus-btn').addEventListener('click', function () {
     /* const inputPlusField = document.getElementById('phone-input-field');
